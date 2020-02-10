@@ -46,8 +46,8 @@ class _ArrowShotState extends State<ArrowShot> {
                     ),
                     child: Image(
                       image: AssetImage('assets/images/swipe_01.png'),
+                      height: MediaQuery.of(context).size.width*0.345,
                       width: MediaQuery.of(context).size.width*0.345,
-                      height: MediaQuery.of(context).size.height*0.21,
                     ),
                   ),
                 ),
@@ -55,14 +55,15 @@ class _ArrowShotState extends State<ArrowShot> {
                     ? ClipOval(
                         child: Container(
                           color: Color(0xFF2F3444).withOpacity(0.8),
-                          height: MediaQuery.of(context).size.height*0.21,
-                          width: MediaQuery.of(context).size.width*0.345,
+                          height: MediaQuery.of(context).size.width*0.35,
+                          width: MediaQuery.of(context).size.width*0.35,
                         ),
                       )
-                    : Container(),
+                    : Container(width: 0, height: 0,),
                 widget.lock
                     ? Positioned(
-                        top: MediaQuery.of(context).size.height*0.06,
+                        // top: MediaQuery.of(context).size.height*0.06,
+                        top: MediaQuery.of(context).size.width*0.11,
                         left: MediaQuery.of(context).size.width*0.11,
                         child: ClipOval(
                           child: Container(
@@ -78,7 +79,7 @@ class _ArrowShotState extends State<ArrowShot> {
                           ),
                         ),
                       )
-                    : Container(),
+                    : Container(width: 0, height: 0,),
               ],
             )
           ],

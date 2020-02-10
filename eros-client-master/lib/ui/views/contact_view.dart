@@ -7,6 +7,7 @@ class ContactView extends StatefulWidget {
 }
 
 class _ContactViewState extends State<ContactView> {
+  static const int unidades = 8;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,16 +24,16 @@ class _ContactViewState extends State<ContactView> {
                     Container(
                       child: Image(
                         image: AssetImage('assets/images/eros_logo.png'),
-                        width: 100.0,
+                        width: MediaQuery.of(context).size.width*0.3,
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 30.0),
-                      height: 600,
+                      margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*0.07, MediaQuery.of(context).size.height*0.05, MediaQuery.of(context).size.width*0.07, MediaQuery.of(context).size.height*0.07),
+                      height: MediaQuery.of(context).size.width*0.345*unidades/2+MediaQuery.of(context).size.height*0.2,
                       child: GridView.count(
-                        physics: ScrollPhysics(),
+                        physics: new NeverScrollableScrollPhysics(),
                         crossAxisCount: 2,
-                        children: List.generate(5, (index) {
+                        children: List.generate(unidades, (index) {
                           return ArrowShot(lock:false);
                         }),
                       ),
